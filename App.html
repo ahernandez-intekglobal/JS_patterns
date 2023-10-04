@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick notes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1630d8305c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="action-bar">
+        <h1>Little note app</h1>
+        <div class="buttons">
+            <button onclick="newNote()"><i class="fa-solid fa-plus"></i></button>
+        </div>
+    </div>
+    <div class="notes">
+        
+    </div>
+    <template id="template">
+        <div class="note">
+            <div class="note_header">
+                <button onclick="noteDestroyer(event)"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <input type="text" class="note_input_title" value="New note">
+            <textarea class="note_input_body" cols="30" rows="8" onchange="modificationHandler(event)"></textarea>
+            <div class="date">
+                <p for="creation_date">creation: </p>
+                <input type="text" name="creation_date" disabled>
+            </div>
+            <div class="date">
+                <p>last modification: </p>
+                <input type="text" name="modification_date" disabled>
+            </div>
+            <!-- <p class="creation_date">creation: </p>
+            <p class="modification_date">last modification: </p> -->
+        </div>
+    </template>
+    <script src="script.js"></script>
+</body>
+</html>
