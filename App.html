@@ -10,20 +10,24 @@
 <body>
     <div class="action-bar">
         <h1>Little note app</h1>
+        <div>
+            <label for="searchBox"><i class="fa-solid fa-magnifying-glass"></i></label>
+            <input type="text" id="searchBox">
+        </div>
         <div class="buttons">
-            <button onclick="newNote()"><i class="fa-solid fa-plus"></i></button>
+            <button id="newNoteButton"><i class="fa-solid fa-plus"></i></button>
         </div>
     </div>
     <div class="notes">
         
     </div>
     <template id="template">
-        <div class="note">
+        <div class="note" draggable="true">
             <div class="note_header">
-                <button onclick="noteDestroyer(event)"><i class="fa-solid fa-xmark"></i></button>
+                <button name="destroyer"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <input type="text" class="note_input_title" value="New note">
-            <textarea class="note_input_body" cols="30" rows="8" onchange="modificationHandler(event)"></textarea>
+            <input type="text" class="note_input_title">
+            <textarea class="note_input_body" cols="30" rows="8"></textarea>
             <div class="date">
                 <p for="creation_date">creation: </p>
                 <input type="text" name="creation_date" disabled>
@@ -32,10 +36,8 @@
                 <p>last modification: </p>
                 <input type="text" name="modification_date" disabled>
             </div>
-            <!-- <p class="creation_date">creation: </p>
-            <p class="modification_date">last modification: </p> -->
         </div>
     </template>
-    <script src="script.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
